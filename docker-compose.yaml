@@ -1,0 +1,20 @@
+name: scorekeeper
+
+services:
+  scorekeeper-prod:
+    build: .
+    ports:
+      - "8080:80"
+    networks:
+      - main
+
+  scorekeeper-sandbox:
+    build: .
+    ports:
+      - "8081:80"
+    networks:
+      - main
+
+networks:
+  main:
+    driver: host
